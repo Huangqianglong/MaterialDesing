@@ -1,219 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-    <CheckBox
-        android:id="@+id/cbDelay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="delay"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        />
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_base" />
     <RelativeLayout
-        android:id="@+id/rlAddBill"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000"
-        android:visibility="gone"
-        >
-        <LinearLayout
-            android:id="@+id/ll01"
-            android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:id="@+id/cbDelay"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="100dp"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:layout_toLeftOf="@+id/miniFab01"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="销售单"
-                android:textSize="15sp"
-                android:textColor="@android:color/white"
-                android:layout_gravity="center_vertical"
-                android:gravity="right"
-                android:paddingBottom="5dp"
-                />
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/miniFab01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_list_white_24dp"
-                android:layout_marginRight="25dp"
-                app:fabSize="mini"
-                app:elevation="5dp"
-                app:backgroundTint="@android:color/holo_red_dark"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/ll02"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="delay" />
+        <RelativeLayout
+            android:id="@+id/rlAddBill"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_above="@+id/ll01"
-            >
-            <TextView
-                android:layout_toLeftOf="@+id/miniFab02"
-                android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll01"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="销售退货"
-                android:textSize="15sp"
-                android:textColor="@android:color/white"
-                android:layout_gravity="center_vertical"
-                android:gravity="right"
-                android:paddingBottom="5dp"
-                />
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/miniFab02"
-                android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="100dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/miniFab01"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingBottom="5dp"
+                    android:text="销售单"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/miniFab01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:src="@mipmap/ic_list_white_24dp"
+                    app:backgroundTint="@android:color/holo_red_dark"
+                    app:elevation="5dp"
+                    app:fabSize="mini" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll02"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_list_white_24dp"
-                android:layout_marginRight="25dp"
-                app:fabSize="mini"
-                app:elevation="5dp"
-                app:backgroundTint="@android:color/black"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/ll03"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_above="@+id/ll02"
-            >
-            <TextView
-                android:layout_toLeftOf="@+id/miniFab02"
-                android:layout_width="0dp"
+                android:layout_above="@+id/ll01"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/miniFab02"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingBottom="5dp"
+                    android:text="销售退货"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/miniFab02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:src="@mipmap/ic_list_white_24dp"
+                    app:backgroundTint="@android:color/black"
+                    app:elevation="5dp"
+                    app:fabSize="mini" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll03"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="收款单"
-                android:textSize="15sp"
-                android:textColor="@android:color/white"
-                android:layout_gravity="center_vertical"
-                android:gravity="right"
-                android:paddingBottom="5dp"
-                />
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/miniFab03"
-                android:layout_width="wrap_content"
+                android:layout_above="@+id/ll02"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/miniFab02"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingBottom="5dp"
+                    android:text="收款单"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/miniFab03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:src="@mipmap/ic_list_white_24dp"
+                    app:backgroundTint="#FFFF3344"
+                    app:elevation="5dp"
+                    app:fabSize="mini" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll04"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_list_white_24dp"
-                android:layout_marginRight="25dp"
-                app:fabSize="mini"
-                app:elevation="5dp"
-                app:backgroundTint="#FFFF3344"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/ll04"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_above="@+id/ll03"
-            >
-            <TextView
-                android:layout_toLeftOf="@+id/miniFab02"
-                android:layout_width="0dp"
+                android:layout_above="@+id/ll03"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/miniFab02"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingBottom="5dp"
+                    android:text="进货单"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/miniFab04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:src="@mipmap/ic_list_white_24dp"
+                    app:backgroundTint="#FFFF6644"
+                    app:elevation="5dp"
+                    app:fabSize="mini" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll05"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="进货单"
-                android:textSize="15sp"
-                android:textColor="@android:color/white"
-                android:layout_gravity="center_vertical"
-                android:gravity="right"
-                android:paddingBottom="5dp"
-                />
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/miniFab04"
-                android:layout_width="wrap_content"
+                android:layout_above="@+id/ll04"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/miniFab02"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingBottom="5dp"
+                    android:text="采购退货"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/miniFab05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:src="@mipmap/ic_list_white_24dp"
+                    app:backgroundTint="#FFFF3399"
+                    app:elevation="5dp"
+                    app:fabSize="mini" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll06"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_list_white_24dp"
-                android:layout_marginRight="25dp"
-                app:fabSize="mini"
-                app:elevation="5dp"
-                app:backgroundTint="#FFFF6644"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/ll05"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_above="@+id/ll04"
-            >
-            <TextView
-                android:layout_toLeftOf="@+id/miniFab02"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="采购退货"
-                android:textSize="15sp"
-                android:textColor="@android:color/white"
-                android:layout_gravity="center_vertical"
-                android:gravity="right"
-                android:paddingBottom="5dp"
-                />
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/miniFab05"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_list_white_24dp"
-                android:layout_marginRight="25dp"
-                app:fabSize="mini"
-                app:elevation="5dp"
-                app:backgroundTint="#FFFF3399"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/ll06"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_above="@+id/ll05"
-            >
-            <TextView
-                android:layout_toLeftOf="@+id/miniFab02"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="付款单"
-                android:textSize="15sp"
-                android:textColor="@android:color/white"
-                android:layout_gravity="center_vertical"
-                android:gravity="right"
-                android:paddingBottom="5dp"
-                />
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/miniFab06"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_list_white_24dp"
-                android:layout_marginRight="25dp"
-                app:fabSize="mini"
-                app:elevation="5dp"
-                app:backgroundTint="#FF333344"
-                />
-        </LinearLayout>
-    </RelativeLayout>
+                android:layout_above="@+id/ll05"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/miniFab02"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingBottom="5dp"
+                    android:text="付款单"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/miniFab06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:src="@mipmap/ic_list_white_24dp"
+                    app:backgroundTint="#FF333344"
+                    app:elevation="5dp"
+                    app:fabSize="mini" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+        <!--android:src：FAB中显示的图标.
+    app:backgroundTint：正常的背景颜色
+    app:rippleColor：按下时的背景颜色
+    app:elevation：正常的阴影大小
+    app:pressedTranslationZ：按下时的阴影大小
+    app:layout_anchor：设置FAB的锚点，即以哪个控件为参照设置位置
+    app:layout_anchorGravity：FAB相对于锚点的位置
+    app:fabSize：FAB的大小，normal或mini（分别对应56dp和40dp）  --></RelativeLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab01Add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
         android:src="@mipmap/ic_add"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="20dp"
-        app:fabSize="normal"
+        app:backgroundTint="#FFFFFF"
         app:elevation="20dp"
-        app:backgroundTint="#31bfcf"
-        app:rippleColor="#e7d161"
-        />
-</RelativeLayout>
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        app:fabSize="auto"
+        app:pressedTranslationZ="90dp"
+        app:rippleColor="#FFFF61" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

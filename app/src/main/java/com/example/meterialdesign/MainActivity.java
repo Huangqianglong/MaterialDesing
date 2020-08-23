@@ -1,12 +1,10 @@
 package com.example.meterialdesign;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,14 +13,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void startCoordinatorLayoutAct(View view){
-        startActivity(new Intent(this,CoordinatorLayoutAct.class));
+
+    public void startCoordinatorLayoutAct(View view) {
+        startActivity(new Intent(this, CoordinatorLayoutAct.class));
     }
-    public void startCollapsingToolbarLayoutAct(View view){
+
+    public void startCollapsingToolbarLayoutAct(View view) {
         startActivity(new Intent(this, CollapsingToolbarLayoutAct.class));
     }
-    public void startFloatingActionButtonAct(View view){
+
+    public void startFloatingActionButtonAct(View view) {
         startActivity(new Intent(this, FloatingActionButtonAct.class));
+    }
+
+    public void startNavigationViewAct(View view) {
+        startActivity(new Intent(this, NavigationViewAct.class));
     }
 
 }

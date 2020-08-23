@@ -17,8 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".CoordinatorLayoutAct" />
-        <activity android:name=".CollapsingToolbarLayoutAct" />
+        <activity android:name=".CollapsingToolbarLayoutAct"
+            android:theme="@style/Theme.Design.NoActionBar"
+            />
         <activity android:name=".FloatingActionButtonAct"/>
+        <activity android:name=".NavigationViewAct"/>
     </application>
 
 </manifest>

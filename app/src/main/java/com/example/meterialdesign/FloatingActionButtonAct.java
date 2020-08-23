@@ -1,31 +1,28 @@
 package com.example.meterialdesign;
 
-import android.view.View;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
-import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
-public class FloatingActionButtonAct extends AppCompatActivity implements View.OnClickListener{
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+public class FloatingActionButtonAct extends BaseAct implements View.OnClickListener {
     private CheckBox cbDelay;
     private FloatingActionButton fab01Add;
     private boolean isAdd = false;
     private RelativeLayout rlAddBill;
-    private int[] llId = new int[]{R.id.ll01,R.id.ll02,R.id.ll03,R.id.ll04,R.id.ll05,R.id.ll06};
+    private int[] llId = new int[]{R.id.ll01, R.id.ll02, R.id.ll03, R.id.ll04, R.id.ll05, R.id.ll06};
     private LinearLayout[] ll = new LinearLayout[llId.length];
-    private int[] fabId = new int[]{R.id.miniFab01,R.id.miniFab02,R.id.miniFab03,R.id.miniFab04,R.id.miniFab05,R.id.miniFab06};
+    private int[] fabId = new int[]{R.id.miniFab01, R.id.miniFab02, R.id.miniFab03, R.id.miniFab04, R.id.miniFab05, R.id.miniFab06};
     private FloatingActionButton[] fab = new FloatingActionButton[fabId.length];
     private AnimatorSet addBillTranslate1;
     private AnimatorSet addBillTranslate2;
@@ -33,44 +30,51 @@ public class FloatingActionButtonAct extends AppCompatActivity implements View.O
     private AnimatorSet addBillTranslate4;
     private AnimatorSet addBillTranslate5;
     private AnimatorSet addBillTranslate6;
+    private CoordinatorLayout mView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_flaot_action);
+        mView = findViewById(R.id.cl_container);
         initView();
         setDefaultValues();
         bindEvents();
     }
-    private void initView(){
-        cbDelay  = (CheckBox)findViewById(R.id.cbDelay);
-        fab01Add = (FloatingActionButton)findViewById(R.id.fab01Add);
-        rlAddBill = (RelativeLayout)findViewById(R.id.rlAddBill);
-        for (int i = 0; i < llId.length;i++){
-            ll[i] = (LinearLayout)findViewById(llId[i]);
+
+    private void initView() {
+        cbDelay = (CheckBox) findViewById(R.id.cbDelay);
+        fab01Add = (FloatingActionButton) findViewById(R.id.fab01Add);
+        rlAddBill = (RelativeLayout) findViewById(R.id.rlAddBill);
+        for (int i = 0; i < llId.length; i++) {
+            ll[i] = (LinearLayout) findViewById(llId[i]);
         }
-        for (int i = 0;i < fabId.length; i++){
-            fab[i] = (FloatingActionButton)findViewById(fabId[i]);
+        for (int i = 0; i < fabId.length; i++) {
+            fab[i] = (FloatingActionButton) findViewById(fabId[i]);
         }
     }
-    private void setDefaultValues(){
-        addBillTranslate1 = (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.add_bill_anim);
-        addBillTranslate2 = (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.add_bill_anim);
-        addBillTranslate3 = (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.add_bill_anim);
-        addBillTranslate4 = (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.add_bill_anim);
-        addBillTranslate5 = (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.add_bill_anim);
-        addBillTranslate6 = (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.add_bill_anim);
+
+    private void setDefaultValues() {
+        addBillTranslate1 = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.add_bill_anim);
+        addBillTranslate2 = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.add_bill_anim);
+        addBillTranslate3 = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.add_bill_anim);
+        addBillTranslate4 = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.add_bill_anim);
+        addBillTranslate5 = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.add_bill_anim);
+        addBillTranslate6 = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.add_bill_anim);
     }
-    private void bindEvents(){
+
+    private void bindEvents() {
         fab01Add.setOnClickListener(this);
-        for (int i = 0;i < fabId.length; i++){
+        for (int i = 0; i < fabId.length; i++) {
             fab[i].setOnClickListener(this);
         }
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab01Add:
-                fab01Add.setImageResource(isAdd ? R.mipmap.ic_add:R.mipmap.ic_close);
+                fab01Add.setImageResource(isAdd ? R.mipmap.ic_add : R.mipmap.ic_close);
                 isAdd = !isAdd;
                 rlAddBill.setVisibility(isAdd ? View.VISIBLE : View.GONE);
                 if (isAdd) {
@@ -107,6 +111,21 @@ public class FloatingActionButtonAct extends AppCompatActivity implements View.O
                 break;
             case R.id.miniFab05:
                 hideFABMenu();
+                //View view = LayoutInflater.from(FloatingActionButtonAct.this).inflate(R.layout.layout_snackbar, null);
+                Snackbar.make(mView, "已删除一个会话", Snackbar.LENGTH_LONG)
+                        .setAction("撤销", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Log.d("hql", "点击view");
+                            }
+                        })
+                        .setAction("撤销2", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.d("hql", "点击view2");
+                    }
+                })
+                        .show();
                 break;
             case R.id.miniFab06:
                 hideFABMenu();
@@ -115,7 +134,8 @@ public class FloatingActionButtonAct extends AppCompatActivity implements View.O
                 break;
         }
     }
-    private void hideFABMenu(){
+
+    private void hideFABMenu() {
         rlAddBill.setVisibility(View.GONE);
         fab01Add.setImageResource(R.mipmap.ic_add);
         isAdd = false;

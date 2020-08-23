@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DrawerLayout"
+   android:layout_gravity="left"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_one"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#baffcc"
+            app:cardCornerRadius="30dp">
+
+            <TextView
+                android:id="@+id/info_text_one"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="圆角cardCornerRadius30dp"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_two"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="60dp"
+            app:cardBackgroundColor="#FFE4B5"
+            android:layout_marginBottom="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="5dp">
+
+            <TextView
+                android:id="@+id/info_text_two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="cardElevation这是设置z轴的阴影 20dp "
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_three"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#FFE4B5"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/card_ripple_2"
+            app:cardCornerRadius="5dp">
+
+            <TextView
+                android:id="@+id/info_text_three"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="ripple 颜色替换"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_four"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#7CCD7C"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="40dp"
+            app:contentPadding="25dp"
+            app:cardMaxElevation="5dp">
+
+            <TextView
+                android:id="@+id/info_text_four"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@android:color/holo_blue_dark"
+                android:text="contentPadding 卡片内容于边距的间隔"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:background="#ffffff"
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/draw_menu_view"
+        app:headerLayout="@layout/nav_header"
+
+        >
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

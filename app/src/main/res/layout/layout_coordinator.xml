@@ -4,24 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:minHeight="100dp"
-        android:layout_height="400dp"
-        app:layout_scrollFlags="scroll|enterAlways">
-
-    </androidx.appcompat.widget.Toolbar>-->
-
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="300dp">
-
-        <!--  <com.google.android.material.appbar.CollapsingToolbarLayout
-      android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          app:layout_scrollFlags="scroll|exitUntilCollapsed"
-          >-->
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -42,7 +27,7 @@
                 android:layout_height="100dp"
                 android:layout_below="@+id/iv_pic"
                 android:gravity="center"
-                android:text="这是头"
+                android:text="这是AppBarLayout"
                 android:textColor="#FFFFFF"
                 android:textSize="30sp" />
         </RelativeLayout>
